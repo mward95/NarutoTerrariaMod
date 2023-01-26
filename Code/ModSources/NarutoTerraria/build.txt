@@ -1,0 +1,3 @@
+displayName = Naruto In Terraria
+author = mattllama12
+version = 0.1
