@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace NarutoTerraria.Items.Weapons
 {
@@ -30,6 +31,13 @@ namespace NarutoTerraria.Items.Weapons
             Item.autoReuse = true;
         }
 
+ public override bool? UseItem(Player player) //Edit Dust ID for a different Effect
+        {
+            if (Main.rand.Next(3) == 0)
+                Dust.NewDust(new Vector2(player.position.X, player.position.Y), player.Hitbox.Width, player.Hitbox.Height, DustID.WitherLightning);
+            return base.UseItem(player);
+        }
+        
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
